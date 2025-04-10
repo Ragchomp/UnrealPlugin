@@ -10,6 +10,8 @@
 
 #include "Engine/World.h"
 
+#include "PhysicsEngine/SkeletalBodySetup.h"
+
 TArray<USkeletalBodySetup*> UUltraleapIEFunctionLibrary::GetSkeletalBodySetups(UPhysicsAsset* PhysicsAsset)
 {
 	return PhysicsAsset->SkeletalBodySetups;

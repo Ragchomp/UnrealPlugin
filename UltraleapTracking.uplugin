@@ -1,58 +1,94 @@
 {
-	"FileVersion": 3,
-	"Version": 14,
-	"VersionName": "5.0.1",
-	"FriendlyName": "Ultraleap Tracking Plugin",
-	"Description": "Support for  Ultraleap hand tracking devices.",
-	"Category": "Input Devices",
-	"CreatedBy": "Ultraleap",
-	"CreatedByURL": "https://www.ultraleap.com/",
-	"DocsURL": "https://github.com/ultraleap/UnrealPlugin#readme",
-	"MarketPlaceURL": "com.epicgames.launcher://ue/marketplace/product/bee1e122fcae438abb50441ee6286d92",
-	"SupportURL": "",
-	"EnabledByDefault": true,
-	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"Installed": false,
-	"Modules": [
-		{
-			"Name": "UltraleapTracking",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Android",
-				"Linux",
-				"Mac"
-			]
-		},
-		{
-			"Name": "UltraleapTrackingEditor",
-			"Type": "UncookedOnly",
-			"LoadingPhase": "PreDefault",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Android",
-				"Linux",
-				"Mac"
-			]
-		},
-		{
-			"Name": "BodyState",
-			"Type": "Runtime",
-			"LoadingPhase": "PreDefault",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Android",
-				"Linux",
-				"Mac"
-			]
-		}
-	],
-	"Plugins": [
-		{
-			"Name": "Niagara",
-			"Enabled": true
-		}
-	]
+    "FileVersion": 3,
+    "Version": 14,
+    "VersionName": "5.5.0",
+    "FriendlyName": "Ultraleap Tracking Plugin",
+    "Description": "Support for Ultraleap hand tracking devices.",
+    "Category": "Input Devices",
+    "CreatedBy": "Ultraleap",
+    "CreatedByURL": "https://www.ultraleap.com/",
+    "DocsURL": "https://github.com/ultraleap/UnrealPlugin#readme",
+    "MarketPlaceURL": "com.epicgames.launcher://ue/marketplace/product/bee1e122fcae438abb50441ee6286d92",
+    "SupportURL": "",
+    "EnabledByDefault": true,
+    "CanContainContent": false,
+    "IsBetaVersion": false,
+    "Installed": false,
+    "Modules": [
+        {
+            "Name": "UltraleapTracking",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "Dependencies": [
+                {
+                    "Name": "XRBase",
+                    "Type": "Runtime",
+                    "Optional": false
+                },
+                {
+                    "Name": "OpenXR",
+                    "Type": "Runtime",
+                    "Optional": false
+                },
+                {
+                    "Name": "Niagara",
+                    "Type": "Runtime",
+                    "Optional": false
+                }
+            ],
+            "WhitelistPlatforms": [
+                "Win64",
+                "Android",
+                "Linux",
+                "Mac"
+            ]
+        },
+        {
+            "Name": "UltraleapTrackingEditor",
+            "Type": "Editor",
+            "LoadingPhase": "PostEngineInit",
+            "Dependencies": [
+                {
+                    "Name": "UltraleapTracking",
+                    "Type": "Runtime",
+                    "Optional": false
+                }
+            ],
+            "WhitelistPlatforms": [
+                "Win64"
+            ]
+        },
+        {
+            "Name": "BodyState",
+            "Type": "Runtime",
+            "LoadingPhase": "PreDefault",
+            "Dependencies": [
+                {
+                    "Name": "XRBase",
+                    "Type": "Runtime",
+                    "Optional": false
+                }
+            ],
+            "WhitelistPlatforms": [
+                "Win64",
+                "Android",
+                "Linux",
+                "Mac"
+            ]
+        }
+    ],
+    "Plugins": [
+        {
+            "Name": "XRBase",
+            "Enabled": true
+        },
+        {
+            "Name": "OpenXR",
+            "Enabled": true
+        },
+        {
+            "Name": "Niagara",
+            "Enabled": true
+        }
+    ]
 }

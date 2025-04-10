@@ -127,6 +127,10 @@ namespace UnrealBuildTool.Rules
 					"BodyState",
 					"PhysicsCore",
 					"UMG",
+					"XRBase",
+					"OpenXR",
+					"OpenXRInput",
+					"OpenXRHMD",
 					// ... add other public dependencies that you statically link with here ...
 				}
 				);
@@ -145,6 +149,10 @@ namespace UnrealBuildTool.Rules
 					"Niagara",
 					"NiagaraShader",
 					"NavigationSystem",
+					"OpenXRHMD",
+					"OpenXRInput",
+					"OpenXR",
+					"XRBase",
 					// ... add private dependencies that you statically link with here ...
                 }
 				);
@@ -238,6 +246,8 @@ namespace UnrealBuildTool.Rules
 				string PlatformString = "Android";
 
 				PublicAdditionalLibraries.Add(Path.Combine(LibraryPath, PlatformString, "arm64-v8a", "libLeapC.so"));
+				
+				AddEngineThirdPartyPrivateStaticDependencies(Target, "Vulkan");
 
 				AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(ModulePath, "UltraleapTracking_APL.xml"));
 

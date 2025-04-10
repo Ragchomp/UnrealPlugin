@@ -71,7 +71,7 @@ void ALeapVisualizer::BeginPlay()
 
 	FVector2D PlayerArea = UHeadMountedDisplayFunctionLibrary::GetPlayAreaBounds();
 	FVector PlayerVec = FVector(PlayerArea.X, PlayerArea.Y, 0.0f);
-	PlayerAreaBoundsComponent->SetNiagaraVariableVec3("User.PlayAreaBounds", PlayerVec);
+	PlayerAreaBoundsComponent->SetVariableVec3(FName("User.PlayAreaBounds"), PlayerVec);
 
 	World = GetWorld();
 	if (World == nullptr)

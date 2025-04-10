@@ -90,6 +90,8 @@ namespace UnrealBuildTool.Rules
 					"AnimGraph",
 					"AnimGraphRuntime",
 					"BodyState",
+					"ToolMenus",
+					"EditorFramework",
 				}
 			);
 
